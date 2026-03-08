@@ -5,7 +5,7 @@ A timeline of how Wonderead evolved from idea to interactive reading platform.
 ---
 
 ### 🚀 v1.0 — Project Kickoff
-**March 7, 2026 • 10:00 AM**
+**March 7, 2026 • 12:20 AM**
 - Initialized React + Vite + Tailwind project on Lovable
 - Set up routing, authentication with Google OAuth via Lovable Cloud
 - Created the core page structure: Login, Home, StoryReader, Dashboard, Notes
@@ -13,7 +13,7 @@ A timeline of how Wonderead evolved from idea to interactive reading platform.
 ---
 
 ### 📚 v1.1 — Story Library & Reader
-**March 7, 2026 • 11:30 AM**
+**March 7, 2026 • 1:30 AM**
 - Built the story bookshelf UI with 7 classic fairy tales
 - Implemented the immersive StoryReader with scene navigation
 - Added bionic reading mode & word-by-word tracking for ADHD accessibility
@@ -22,7 +22,7 @@ A timeline of how Wonderead evolved from idea to interactive reading platform.
 ---
 
 ### 🎙️ v1.2 — AI Narration
-**March 7, 2026 • 1:00 PM**
+**March 7, 2026 • 1:50 PM**
 - Connected ElevenLabs TTS via Lovable Cloud edge function
 - Added "Read Aloud" button with the Alice voice (warm, child-friendly)
 - Audio streams as binary blob, played via HTMLAudioElement
