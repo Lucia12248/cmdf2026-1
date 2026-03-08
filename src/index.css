@@ -1,68 +1,168 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Core palette — deeper purple, more professional */
+    --cream: 260 30% 98%;
+    --background: 260 30% 98%;
+    --foreground: 268 35% 18%;
+
+    --text-dark: 268 35% 18%;
+    --text-mid: 268 20% 38%;
+    --text-soft: 268 14% 55%;
+
+    /* Lavender — richer & deeper */
+    --lavender: 264 60% 92%;
+    --lav-mid: 264 50% 76%;
+    --lav-deep: 264 45% 46%;
+
+    /* Blush */
+    --blush: 336 60% 93%;
+    --blush-mid: 336 55% 75%;
+    --blush-deep: 336 48% 52%;
+
+    /* Mint */
+    --mint: 155 50% 90%;
+    --mint-mid: 155 40% 62%;
+    --mint-deep: 160 44% 38%;
+
+    /* Peach */
+    --peach: 26 88% 91%;
+    --peach-mid: 22 72% 68%;
+    --peach-deep: 22 65% 46%;
+
+    /* Shadcn tokens mapped — deeper purple primary */
+    --card: 260 25% 99%;
+    --card-foreground: 268 35% 18%;
+    --popover: 260 25% 99%;
+    --popover-foreground: 268 35% 18%;
+    --primary: 264 45% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 264 60% 92%;
+    --secondary-foreground: 268 35% 18%;
+    --muted: 264 40% 92%;
+    --muted-foreground: 268 14% 55%;
+    --accent: 155 50% 90%;
+    --accent-foreground: 160 44% 38%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 264 35% 88%;
+    --input: 264 35% 88%;
+    --ring: 264 45% 46%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 260 30% 98%;
+    --sidebar-foreground: 268 35% 18%;
+    --sidebar-primary: 264 45% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 264 60% 92%;
+    --sidebar-accent-foreground: 268 35% 18%;
+    --sidebar-border: 264 35% 88%;
+    --sidebar-ring: 264 45% 46%;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-  button {
-    background-color: #f9f9f9;
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
   }
+}
+
+/* Font utilities */
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+.font-body {
+  font-family: 'Lora', serif;
+}
+.font-sans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Animations */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(2deg); }
+  66% { transform: translateY(4px) rotate(-2deg); }
+}
+@keyframes sparkle-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes rainbow-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(124,92,184,0.2); }
+  50% { box-shadow: 0 0 24px rgba(124,92,184,0.45); }
+}
+
+.animate-bob {
+  animation: bob 3s ease-in-out infinite;
+}
+.animate-ticker {
+  animation: ticker-scroll 20s linear infinite;
+}
+.animate-wiggle {
+  animation: wiggle 1.5s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-sparkle {
+  animation: sparkle-pulse 2s ease-in-out infinite;
+}
+.animate-rainbow {
+  background-size: 200% 200%;
+  animation: rainbow-shimmer 3s ease infinite;
+}
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+.animate-glow {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* Fun scrollbar for kids */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--lavender));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--lav-mid));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--lav-deep));
 }
