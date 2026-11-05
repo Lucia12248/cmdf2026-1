@@ -1,73 +1,31 @@
-# Welcome to your Lovable project
+Inspiration
+Reading can be a monumental challenge for children these days, especially for children with ADHD, where traditional blocks of text can often lead to difficulties such as loss of focus. We wanted to create Wonderead to transform static stories into an interactive, multi-sensory experience that uses AI to maintain engagement through audio and visual "attention reset loops".
 
-## Project info
+What it does
+Wonderead is an AI-powered reading companion that takes any story and instantly converts it into a structured, scene-by-scene digital book. It features:
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+ADHD-Optimized UI: Options for Bionic Reading fonts that can help with focus.
 
-## How can I edit this code?
+Scene-by-Scene Breakdown: Stories are split into manageable chunks to prevent mental overload.
 
-There are several ways of editing your application.
+AI Narration & Illustration: Each scene is paired with a unique voice and custom-generated artwork.
 
-**Use Lovable**
+Parent Dashboard: A way for parents to track reading progress and consistency.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+How we built it
+We engineered Wonderead as a high-performance, accessible web application using a modern frontend-heavy stack:
 
-Changes made via Lovable will be committed automatically to this repo.
+Frontend: Built with React 18, TypeScript, and Vite for a robust, type-safe, and lightning-fast user interface.
 
-**Use your preferred IDE**
+UI & Animations: Styled with Tailwind CSS and shadcn/ui, while Framer Motion powers immersive elements like our cursor-tracking "Interactive Bunny".
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+AI Narration: A secure pipeline using Supabase Edge Functions to proxy ElevenLabs API calls, delivering high-fidelity audio while protecting sensitive API keys.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Data Architecture: Content is managed via structured scene data in TypeScript, supporting instant, scene-by-scene rendering with integrated video.
 
-Follow these steps:
+ADHD Features: Custom engines for Bionic Reading (bolded fixations) and Word Tracking (timer-based highlighting) to maintain reader engagement.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Infrastructure: Supabase Auth handles Google OAuth and session management, with localStorage persisting user XP and gamification stats.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+What's next for Wonderead
+We plan to expand the "Parent Dashboard" with more granular analytics, such as tracking "focus time" versus "total time". We also want to implement a password feature so parents can choose which books their children are allowed to read. We would also like to add support for children with dyslexia and other conditions that may affect their ability to learn how to read.
